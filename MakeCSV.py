@@ -7,6 +7,7 @@
 import subprocess as sp 
 import csv
 import re
+import sys
 
 # current data set: 
 # each row is a bacteria, in the format 
@@ -18,9 +19,10 @@ import re
 # GOAL:
 # Have the row be just the genus name
 # Have the samples be just their sample name
-INPUT_FILENAME = 'qiime.csv'
+#INPUT_FILENAME = 'qiime.csv'
 def main():
-	inputs = readInput(INPUT_FILENAME)
+	file_name = sys.argv[1]
+	inputs = readInput(file_name)
 	samples = inputs[0]
 	genus = inputs[1]
 	counts = inputs[2]
